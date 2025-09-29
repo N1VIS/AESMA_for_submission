@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://qqqo4l6bkooc"]
+
+[ext_resource type="Texture2D" uid="uid://6pexgf6gtvsn" path="res://Art/Free SciFi Inventory/Inventory Boxes/scifi_inventory01.png" id="1_etm8p"]
+
+[node name="EquipmentSlot" type="Panel"]
+custom_minimum_size = Vector2(44, 44)
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(22, 22)
+scale = Vector2(1.29412, 1.29412)
+texture = ExtResource("1_etm8p")

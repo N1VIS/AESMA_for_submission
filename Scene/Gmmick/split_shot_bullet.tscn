@@ -1,0 +1,87 @@
+[gd_scene load_steps=8 format=3 uid="uid://crplhpk0fmigs"]
+
+[ext_resource type="Script" path="res://Script/Gimmick/SplitShot.gd" id="1_5dpko"]
+[ext_resource type="Texture2D" uid="uid://b2uotuneoypwu" path="res://Art/Gun/Projectiles 16x16 Sprite Sheet.png" id="2_ts1et"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t66e5"]
+atlas = ExtResource("2_ts1et")
+region = Rect2(0, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ueapq"]
+atlas = ExtResource("2_ts1et")
+region = Rect2(16, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mapv3"]
+atlas = ExtResource("2_ts1et")
+region = Rect2(32, 32, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ta5am"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t66e5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ueapq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mapv3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_igcd6"]
+radius = 2.0
+height = 7.0759
+
+[node name="SplitShot" type="Node2D"]
+position = Vector2(0, -11)
+script = ExtResource("1_5dpko")
+
+[node name="Bullet1" type="Area2D" parent="."]
+position = Vector2(0, -11)
+collision_layer = 2
+collision_mask = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Bullet1"]
+sprite_frames = SubResource("SpriteFrames_ta5am")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bullet1"]
+position = Vector2(-0.628372, 0.520277)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_igcd6")
+
+[node name="Bullet2" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Bullet2"]
+sprite_frames = SubResource("SpriteFrames_ta5am")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bullet2"]
+position = Vector2(-0.628372, 0.520277)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_igcd6")
+
+[node name="Bullet3" type="Area2D" parent="."]
+position = Vector2(0, 11)
+collision_layer = 2
+collision_mask = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Bullet3"]
+sprite_frames = SubResource("SpriteFrames_ta5am")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bullet3"]
+position = Vector2(-0.628372, 0.520277)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_igcd6")
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+autostart = true
+
+[connection signal="body_entered" from="Bullet1" to="." method="_on_bullet_1_body_entered"]
+[connection signal="body_entered" from="Bullet2" to="." method="_on_bullet_2_body_entered"]
+[connection signal="body_entered" from="Bullet3" to="." method="_on_bullet_3_body_entered"]

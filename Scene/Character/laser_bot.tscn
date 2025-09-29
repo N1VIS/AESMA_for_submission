@@ -1,0 +1,1407 @@
+[gd_scene load_steps=102 format=3 uid="uid://7jhy7doo2xc5"]
+
+[ext_resource type="Script" path="res://Script/Character/Boss_Mage/Area2d_bossmage_laser1.gd" id="2_ulobe"]
+[ext_resource type="Texture2D" uid="uid://dp581kf16abdb" path="res://Art/Penusbmic/Sci-fi Character Pack 11/Toaster Bot/attack_wo_pf.png" id="3_5xltd"]
+[ext_resource type="AudioStream" uid="uid://c8j6rnwfynr1b" path="res://Audio/SFX/mirage_blast.wav" id="3_vbr1k"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ydm72"]
+radius = 7.63636
+height = 82.0
+
+[sub_resource type="Animation" id="Animation_rpv2s"]
+resource_name = "Flash1"
+length = 0.5
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Laser_bot1/Sprite2D_Flash1:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.15, 0.25, 0.3, 0.35, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [11, 0, 11, 0, 11, 0, 11]
+}
+
+[sub_resource type="Animation" id="Animation_xd0gd"]
+resource_name = "Flash2"
+length = 0.5
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Laser_bot2/Sprite2D_Flash2:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [11, 0, 11, 11, 0, 11, 0, 11]
+}
+
+[sub_resource type="Animation" id="Animation_uws77"]
+resource_name = "Flash3"
+length = 0.5
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Laser_bot3/Sprite2D_Flash3:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [11, 0, 11, 11, 0, 11, 0, 11]
+}
+
+[sub_resource type="Animation" id="Animation_r0p2l"]
+resource_name = "Flash_double1"
+length = 0.5
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Laser_bot1/Sprite2D_Flash1:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.15, 0.25, 0.3, 0.35, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [11, 0, 11, 0, 11, 0, 11]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Laser_bot2/Sprite2D_Flash2:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [11, 0, 11, 11, 0, 11, 0, 11]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = false
+tracks/2/path = NodePath("Laser_bot3/Sprite2D_Flash3:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [11, 0, 11, 11, 0, 11, 0, 11]
+}
+
+[sub_resource type="Animation" id="Animation_vh68w"]
+resource_name = "Flash_double2"
+length = 0.5
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Laser_bot1/Sprite2D_Flash1:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.15, 0.25, 0.3, 0.35, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [11, 0, 11, 0, 11, 0, 11]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = false
+tracks/1/path = NodePath("Laser_bot2/Sprite2D_Flash2:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [11, 0, 11, 11, 0, 11, 0, 11]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Laser_bot3/Sprite2D_Flash3:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [11, 0, 11, 11, 0, 11, 0, 11]
+}
+
+[sub_resource type="Animation" id="Animation_a7cj5"]
+resource_name = "Flash_double3"
+length = 0.5
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = false
+tracks/0/path = NodePath("Laser_bot1/Sprite2D_Flash1:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.15, 0.25, 0.3, 0.35, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [11, 0, 11, 0, 11, 0, 11]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Laser_bot2/Sprite2D_Flash2:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [11, 0, 11, 11, 0, 11, 0, 11]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Laser_bot3/Sprite2D_Flash3:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [11, 0, 11, 11, 0, 11, 0, 11]
+}
+
+[sub_resource type="Animation" id="Animation_tenl0"]
+resource_name = "Laser1"
+length = 0.85
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Laser_bot1/Sprite2D_Laser1:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.25, 0.45, 0.55, 0.6, 0.7, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [11, 0, 1, 5, 6, 7, 8, 9, 10, 11]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Laser_bot1/Sprite2D_Laser1/Area2d_bossmage_laser1/CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.55),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [true, false, false, true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AudioStreamPlayer2D:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.25),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_d5kr4"]
+resource_name = "Laser2"
+length = 0.85
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Laser_bot2/Sprite2D_Laser2:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.25, 0.45, 0.55, 0.6, 0.7, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [11, 0, 1, 5, 6, 7, 8, 9, 10, 11]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Laser_bot2/Sprite2D_Laser2/Area2d_bossmage_laser2/CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.55),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [true, false, false, true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AudioStreamPlayer2D:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.25),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_4714q"]
+resource_name = "Laser3"
+length = 0.85
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Laser_bot3/Sprite2D_Laser3:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.25, 0.45, 0.55, 0.6, 0.65, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [11, 0, 1, 5, 6, 7, 8, 9, 10, 11]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Laser_bot3/Sprite2D_Laser3/Area2d_bossmage_laser3/CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.55),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [true, false, false, true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AudioStreamPlayer2D:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.25),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_nrw0g"]
+resource_name = "Laser1&2"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Laser_bot1/Sprite2D_Laser1:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.25, 0.45, 0.55, 0.6, 0.7, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [11, 0, 1, 5, 6, 7, 8, 9, 10, 11]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Laser_bot1/Sprite2D_Laser1/Area2d_bossmage_laser1/CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.55),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [true, false, false, true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Laser_bot2/Sprite2D_Laser2:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.25, 0.45, 0.55, 0.6, 0.7, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [11, 0, 1, 5, 6, 7, 8, 9, 10, 11]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Laser_bot2/Sprite2D_Laser2/Area2d_bossmage_laser2/CollisionShape2D:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.55),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [true, false, false, true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = false
+tracks/4/path = NodePath("Laser_bot3/Sprite2D_Laser3:frame")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.25, 0.45, 0.55, 0.6, 0.65, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [11, 0, 1, 5, 6, 7, 8, 9, 10, 11]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = false
+tracks/5/path = NodePath("Laser_bot3/Sprite2D_Laser3/Area2d_bossmage_laser3/CollisionShape2D:disabled")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.55),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [true, false, false, true]
+}
+
+[sub_resource type="Animation" id="Animation_eykha"]
+resource_name = "Laser_double2"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Laser_bot1/Sprite2D_Laser1:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.25, 0.45, 0.55, 0.6, 0.7, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [11, 0, 1, 5, 6, 7, 8, 9, 10, 11]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Laser_bot1/Sprite2D_Laser1/Area2d_bossmage_laser1/CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.55),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [true, false, false, true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = false
+tracks/2/path = NodePath("Laser_bot2/Sprite2D_Laser2:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.25, 0.45, 0.55, 0.6, 0.7, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [11, 0, 1, 5, 6, 7, 8, 9, 10, 11]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = false
+tracks/3/path = NodePath("Laser_bot2/Sprite2D_Laser2/Area2d_bossmage_laser2/CollisionShape2D:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.55),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [true, false, false, true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Laser_bot3/Sprite2D_Laser3:frame")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.25, 0.45, 0.55, 0.6, 0.65, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [11, 0, 1, 5, 6, 7, 8, 9, 10, 11]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Laser_bot3/Sprite2D_Laser3/Area2d_bossmage_laser3/CollisionShape2D:disabled")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.55),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [true, false, false, true]
+}
+
+[sub_resource type="Animation" id="Animation_mlx1b"]
+resource_name = "Laser_double3"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = false
+tracks/0/path = NodePath("Laser_bot1/Sprite2D_Laser1:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.25, 0.45, 0.55, 0.6, 0.7, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [11, 0, 1, 5, 6, 7, 8, 9, 10, 11]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = false
+tracks/1/path = NodePath("Laser_bot1/Sprite2D_Laser1/Area2d_bossmage_laser1/CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.55),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [true, false, false, true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Laser_bot2/Sprite2D_Laser2:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.25, 0.45, 0.55, 0.6, 0.7, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [11, 0, 1, 5, 6, 7, 8, 9, 10, 11]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Laser_bot2/Sprite2D_Laser2/Area2d_bossmage_laser2/CollisionShape2D:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.55),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [true, false, false, true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Laser_bot3/Sprite2D_Laser3:frame")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.25, 0.45, 0.55, 0.6, 0.65, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [11, 0, 1, 5, 6, 7, 8, 9, 10, 11]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Laser_bot3/Sprite2D_Laser3/Area2d_bossmage_laser3/CollisionShape2D:disabled")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.55),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [true, false, false, true]
+}
+
+[sub_resource type="Animation" id="Animation_ooy5d"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Laser_bot1/Sprite2D_Flash1:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [11]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Laser_bot2/Sprite2D_Flash2:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [11]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Laser_bot3/Sprite2D_Flash3:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [11]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Laser_bot1/Sprite2D_Laser1:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [11]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Laser_bot2/Sprite2D_Laser2:frame")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [11]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Laser_bot3/Sprite2D_Laser3:frame")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [11]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("AnimationTree:parameters/conditions/anim_stopped")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("AudioStreamPlayer2D:playing")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_f77gw"]
+resource_name = "Wait_halfsec"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Laser_bot1/Sprite2D_Flash1:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [11]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Laser_bot2/Sprite2D_Flash2:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [11]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Laser_bot3/Sprite2D_Flash3:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [11]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Laser_bot1/Sprite2D_Laser1:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [11]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Laser_bot2/Sprite2D_Laser2:frame")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [11]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Laser_bot3/Sprite2D_Laser3:frame")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [11]
+}
+
+[sub_resource type="Animation" id="Animation_qqqx1"]
+resource_name = "Wait_Qtrsec"
+length = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Laser_bot1/Sprite2D_Flash1:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [11]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Laser_bot2/Sprite2D_Flash2:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [11]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Laser_bot3/Sprite2D_Flash3:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [11]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Laser_bot1/Sprite2D_Laser1:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [11]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Laser_bot2/Sprite2D_Laser2:frame")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [11]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Laser_bot3/Sprite2D_Laser3:frame")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [11]
+}
+
+[sub_resource type="Animation" id="Animation_akitb"]
+resource_name = "Wait_1sec"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Laser_bot1/Sprite2D_Flash1:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [11]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Laser_bot2/Sprite2D_Flash2:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [11]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Laser_bot3/Sprite2D_Flash3:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [11]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Laser_bot1/Sprite2D_Laser1:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [11]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Laser_bot2/Sprite2D_Laser2:frame")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [11]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Laser_bot3/Sprite2D_Laser3:frame")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [11]
+}
+
+[sub_resource type="Animation" id="Animation_fhiil"]
+resource_name = "anim_stop"
+length = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationTree:parameters/conditions/123")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimationTree:parameters/conditions/321")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimationTree:parameters/conditions/Double1")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AnimationTree:parameters/conditions/Double2")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("AnimationTree:parameters/conditions/Double3")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("AnimationTree:parameters/conditions/anim_stopped")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ms3ds"]
+_data = {
+"Flash1": SubResource("Animation_rpv2s"),
+"Flash2": SubResource("Animation_xd0gd"),
+"Flash3": SubResource("Animation_uws77"),
+"Flash_double1": SubResource("Animation_r0p2l"),
+"Flash_double2": SubResource("Animation_vh68w"),
+"Flash_double3": SubResource("Animation_a7cj5"),
+"Laser1": SubResource("Animation_tenl0"),
+"Laser2": SubResource("Animation_d5kr4"),
+"Laser3": SubResource("Animation_4714q"),
+"Laser_double1": SubResource("Animation_nrw0g"),
+"Laser_double2": SubResource("Animation_eykha"),
+"Laser_double3": SubResource("Animation_mlx1b"),
+"RESET": SubResource("Animation_ooy5d"),
+"Wait_Halfsec": SubResource("Animation_f77gw"),
+"Wait_Qtrsec": SubResource("Animation_qqqx1"),
+"Wait_Sec": SubResource("Animation_akitb"),
+"anim_stop": SubResource("Animation_fhiil")
+}
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_51x5n"]
+animation = &"Flash1"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_82v3d"]
+animation = &"Flash2"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_e26sc"]
+animation = &"Flash3"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_lvnmk"]
+animation = &"Laser1"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_2ncbw"]
+animation = &"Laser2"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_dvnoa"]
+animation = &"Laser3"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_auttl"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_68o42"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_3ftjt"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_1tkto"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_g51os"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_vlkqf"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_t0132"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_yskio"]
+states/Flash1/node = SubResource("AnimationNodeAnimation_51x5n")
+states/Flash1/position = Vector2(200, 247)
+states/Flash2/node = SubResource("AnimationNodeAnimation_82v3d")
+states/Flash2/position = Vector2(368, 247)
+states/Flash3/node = SubResource("AnimationNodeAnimation_e26sc")
+states/Flash3/position = Vector2(527, 247)
+states/Laser1/node = SubResource("AnimationNodeAnimation_lvnmk")
+states/Laser1/position = Vector2(681, 247)
+states/Laser2/node = SubResource("AnimationNodeAnimation_2ncbw")
+states/Laser2/position = Vector2(836, 247)
+states/Laser3/node = SubResource("AnimationNodeAnimation_dvnoa")
+states/Laser3/position = Vector2(996, 247)
+transitions = ["Flash1", "Flash2", SubResource("AnimationNodeStateMachineTransition_auttl"), "Laser1", "Laser2", SubResource("AnimationNodeStateMachineTransition_68o42"), "Flash2", "Flash3", SubResource("AnimationNodeStateMachineTransition_3ftjt"), "Flash3", "Laser1", SubResource("AnimationNodeStateMachineTransition_1tkto"), "Laser2", "Laser3", SubResource("AnimationNodeStateMachineTransition_g51os"), "Start", "Flash1", SubResource("AnimationNodeStateMachineTransition_vlkqf"), "Laser3", "End", SubResource("AnimationNodeStateMachineTransition_t0132")]
+graph_offset = Vector2(-5, 49)
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_emx8n"]
+animation = &"Flash1"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_7fdj7"]
+animation = &"Flash2"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_lo1ro"]
+animation = &"Flash3"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ovb3f"]
+animation = &"Laser1"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_lqqpr"]
+animation = &"Laser2"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_2ckxl"]
+animation = &"Laser3"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ssp6y"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_e0oh3"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_vt82g"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_p7xvy"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_3pf1x"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_o6ad5"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_dw0v5"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_rydph"]
+"states/Flash1 2/node" = SubResource("AnimationNodeAnimation_emx8n")
+"states/Flash1 2/position" = Vector2(527, 225)
+"states/Flash2 2/node" = SubResource("AnimationNodeAnimation_7fdj7")
+"states/Flash2 2/position" = Vector2(368, 225)
+"states/Flash3 2/node" = SubResource("AnimationNodeAnimation_lo1ro")
+"states/Flash3 2/position" = Vector2(200, 225)
+"states/Laser1 2/node" = SubResource("AnimationNodeAnimation_ovb3f")
+"states/Laser1 2/position" = Vector2(996, 225)
+"states/Laser2 2/node" = SubResource("AnimationNodeAnimation_lqqpr")
+"states/Laser2 2/position" = Vector2(836, 225)
+"states/Laser3 2/node" = SubResource("AnimationNodeAnimation_2ckxl")
+"states/Laser3 2/position" = Vector2(681, 225)
+transitions = ["Flash2 2", "Flash1 2", SubResource("AnimationNodeStateMachineTransition_ssp6y"), "Laser2 2", "Laser1 2", SubResource("AnimationNodeStateMachineTransition_e0oh3"), "Laser3 2", "Laser2 2", SubResource("AnimationNodeStateMachineTransition_vt82g"), "Flash1 2", "Laser3 2", SubResource("AnimationNodeStateMachineTransition_p7xvy"), "Flash3 2", "Flash2 2", SubResource("AnimationNodeStateMachineTransition_3pf1x"), "Start", "Flash3 2", SubResource("AnimationNodeStateMachineTransition_o6ad5"), "Laser1 2", "End", SubResource("AnimationNodeStateMachineTransition_dw0v5")]
+graph_offset = Vector2(-35, 10)
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_qfyo5"]
+animation = &"Flash1"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_4x756"]
+animation = &"Flash_double3"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_yuvqm"]
+animation = &"Laser1"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_e23ye"]
+animation = &"Laser_double3"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_pxw6d"]
+animation = &"Wait_Halfsec"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ij424"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_hre7f"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_hjf4l"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_k4ldv"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_2pjxt"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_c4bgl"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_4x3ks"]
+"states/Flash1 3/node" = SubResource("AnimationNodeAnimation_qfyo5")
+"states/Flash1 3/position" = Vector2(200, 228)
+states/Flash_double3/node = SubResource("AnimationNodeAnimation_4x756")
+states/Flash_double3/position = Vector2(368, 228)
+"states/Laser1 3/node" = SubResource("AnimationNodeAnimation_yuvqm")
+"states/Laser1 3/position" = Vector2(836, 228)
+states/Laser_double3/node = SubResource("AnimationNodeAnimation_e23ye")
+states/Laser_double3/position = Vector2(996, 228)
+states/Wait_Halfsec/node = SubResource("AnimationNodeAnimation_pxw6d")
+states/Wait_Halfsec/position = Vector2(610, 228)
+transitions = ["Flash1 3", "Flash_double3", SubResource("AnimationNodeStateMachineTransition_ij424"), "Laser1 3", "Laser_double3", SubResource("AnimationNodeStateMachineTransition_hre7f"), "Laser_double3", "End", SubResource("AnimationNodeStateMachineTransition_hjf4l"), "Start", "Flash1 3", SubResource("AnimationNodeStateMachineTransition_k4ldv"), "Flash_double3", "Wait_Halfsec", SubResource("AnimationNodeStateMachineTransition_2pjxt"), "Wait_Halfsec", "Laser1 3", SubResource("AnimationNodeStateMachineTransition_c4bgl")]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_04pff"]
+animation = &"Flash2"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_k5dda"]
+animation = &"Flash_double2"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_yfkub"]
+animation = &"Laser2"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ax468"]
+animation = &"Laser_double2"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_rcltu"]
+animation = &"Wait_Halfsec"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_et3wu"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_kdhwj"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_85thx"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_0lgbt"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ackm8"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_fa8bd"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_ps8m7"]
+"states/Flash2 3/node" = SubResource("AnimationNodeAnimation_04pff")
+"states/Flash2 3/position" = Vector2(200, 247)
+states/Flash_double2/node = SubResource("AnimationNodeAnimation_k5dda")
+states/Flash_double2/position = Vector2(368, 247)
+"states/Laser2 3/node" = SubResource("AnimationNodeAnimation_yfkub")
+"states/Laser2 3/position" = Vector2(836, 247)
+states/Laser_double2/node = SubResource("AnimationNodeAnimation_ax468")
+states/Laser_double2/position = Vector2(996, 247)
+states/Wait_Halfsec/node = SubResource("AnimationNodeAnimation_rcltu")
+states/Wait_Halfsec/position = Vector2(601, 247)
+transitions = ["Flash2 3", "Flash_double2", SubResource("AnimationNodeStateMachineTransition_et3wu"), "Laser2 3", "Laser_double2", SubResource("AnimationNodeStateMachineTransition_kdhwj"), "Laser_double2", "End", SubResource("AnimationNodeStateMachineTransition_85thx"), "Start", "Flash2 3", SubResource("AnimationNodeStateMachineTransition_0lgbt"), "Flash_double2", "Wait_Halfsec", SubResource("AnimationNodeStateMachineTransition_ackm8"), "Wait_Halfsec", "Laser2 3", SubResource("AnimationNodeStateMachineTransition_fa8bd")]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_7d8kq"]
+animation = &"Flash3"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_qrrso"]
+animation = &"Flash_double1"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_tixek"]
+animation = &"Laser3"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_iv0fu"]
+animation = &"Laser_double1"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_c8w2i"]
+animation = &"Wait_Halfsec"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_118ng"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_tcjff"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_p6ah1"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_02vs3"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ghgmt"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_xgyma"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_dhh8b"]
+"states/Flash3 3/node" = SubResource("AnimationNodeAnimation_7d8kq")
+"states/Flash3 3/position" = Vector2(200, 241)
+states/Flash_double1/node = SubResource("AnimationNodeAnimation_qrrso")
+states/Flash_double1/position = Vector2(368, 241)
+"states/Laser3 3/node" = SubResource("AnimationNodeAnimation_tixek")
+"states/Laser3 3/position" = Vector2(836, 241)
+states/Laser_double1/node = SubResource("AnimationNodeAnimation_iv0fu")
+states/Laser_double1/position = Vector2(996, 241)
+states/Wait_Halfsec/node = SubResource("AnimationNodeAnimation_c8w2i")
+states/Wait_Halfsec/position = Vector2(612, 241)
+transitions = ["Laser3 3", "Laser_double1", SubResource("AnimationNodeStateMachineTransition_118ng"), "Flash3 3", "Flash_double1", SubResource("AnimationNodeStateMachineTransition_tcjff"), "Start", "Flash3 3", SubResource("AnimationNodeStateMachineTransition_p6ah1"), "Laser_double1", "End", SubResource("AnimationNodeStateMachineTransition_02vs3"), "Flash_double1", "Wait_Halfsec", SubResource("AnimationNodeStateMachineTransition_ghgmt"), "Wait_Halfsec", "Laser3 3", SubResource("AnimationNodeStateMachineTransition_xgyma")]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_wr2jb"]
+animation = &"RESET"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_emyrv"]
+animation = &"anim_stop"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_uhvej"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_cltqe"]
+switch_mode = 2
+advance_mode = 2
+advance_condition = &"anim_stopped"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_bd4yc"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_q687o"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_b3duj"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_b1emu"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_1nx82"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_glr5x"]
+switch_mode = 2
+advance_mode = 2
+advance_condition = &"123"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_oqmo6"]
+switch_mode = 2
+advance_mode = 2
+advance_condition = &"321"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_cerp6"]
+switch_mode = 2
+advance_mode = 2
+advance_condition = &"Double1"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_4cjae"]
+switch_mode = 2
+advance_mode = 2
+advance_condition = &"Double2"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_eli2i"]
+switch_mode = 2
+advance_mode = 2
+advance_condition = &"Double3"
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_owyot"]
+states/End/position = Vector2(1414, 56)
+states/Laser123/node = SubResource("AnimationNodeStateMachine_yskio")
+states/Laser123/position = Vector2(748.333, 87)
+states/Laser321/node = SubResource("AnimationNodeStateMachine_rydph")
+states/Laser321/position = Vector2(748.333, 155)
+states/Laser_Double1/node = SubResource("AnimationNodeStateMachine_4x3ks")
+states/Laser_Double1/position = Vector2(746.2, 262)
+states/Laser_Double2/node = SubResource("AnimationNodeStateMachine_ps8m7")
+states/Laser_Double2/position = Vector2(746.2, 324)
+states/Laser_Double3/node = SubResource("AnimationNodeStateMachine_dhh8b")
+states/Laser_Double3/position = Vector2(748.333, 384)
+states/RESET/node = SubResource("AnimationNodeAnimation_wr2jb")
+states/RESET/position = Vector2(446, 196)
+states/Start/position = Vector2(94, 196)
+states/anim_stop/node = SubResource("AnimationNodeAnimation_emyrv")
+states/anim_stop/position = Vector2(1156, 196)
+transitions = ["Start", "RESET", SubResource("AnimationNodeStateMachineTransition_uhvej"), "anim_stop", "RESET", SubResource("AnimationNodeStateMachineTransition_cltqe"), "Laser123", "anim_stop", SubResource("AnimationNodeStateMachineTransition_bd4yc"), "Laser321", "anim_stop", SubResource("AnimationNodeStateMachineTransition_q687o"), "Laser_Double1", "anim_stop", SubResource("AnimationNodeStateMachineTransition_b3duj"), "Laser_Double2", "anim_stop", SubResource("AnimationNodeStateMachineTransition_b1emu"), "Laser_Double3", "anim_stop", SubResource("AnimationNodeStateMachineTransition_1nx82"), "RESET", "Laser123", SubResource("AnimationNodeStateMachineTransition_glr5x"), "RESET", "Laser321", SubResource("AnimationNodeStateMachineTransition_oqmo6"), "RESET", "Laser_Double1", SubResource("AnimationNodeStateMachineTransition_cerp6"), "RESET", "Laser_Double2", SubResource("AnimationNodeStateMachineTransition_4cjae"), "RESET", "Laser_Double3", SubResource("AnimationNodeStateMachineTransition_eli2i")]
+graph_offset = Vector2(-74, 65)
+
+[node name="laser_bot" type="Node2D"]
+
+[node name="Laser_bot1" type="Node2D" parent="."]
+
+[node name="Sprite2D_Flash1" type="Sprite2D" parent="Laser_bot1"]
+position = Vector2(-163, 0)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("3_5xltd")
+hframes = 12
+frame = 11
+
+[node name="Sprite2D_Laser1" type="Sprite2D" parent="Laser_bot1"]
+scale = Vector2(5.6, 2.24)
+texture = ExtResource("3_5xltd")
+hframes = 12
+frame = 11
+
+[node name="Area2d_bossmage_laser1" type="Area2D" parent="Laser_bot1/Sprite2D_Laser1" groups=["mageboss_laser"]]
+script = ExtResource("2_ulobe")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Laser_bot1/Sprite2D_Laser1/Area2d_bossmage_laser1"]
+position = Vector2(0, 1)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_ydm72")
+disabled = true
+
+[node name="Laser_bot2" type="Node2D" parent="."]
+position = Vector2(0, 46)
+
+[node name="Sprite2D_Flash2" type="Sprite2D" parent="Laser_bot2"]
+position = Vector2(-163, 0)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("3_5xltd")
+hframes = 12
+frame = 11
+
+[node name="Sprite2D_Laser2" type="Sprite2D" parent="Laser_bot2"]
+scale = Vector2(5.6, 2.2)
+texture = ExtResource("3_5xltd")
+hframes = 12
+frame = 11
+
+[node name="Area2d_bossmage_laser2" type="Area2D" parent="Laser_bot2/Sprite2D_Laser2" groups=["mageboss_laser"]]
+script = ExtResource("2_ulobe")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Laser_bot2/Sprite2D_Laser2/Area2d_bossmage_laser2"]
+position = Vector2(0, 1)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_ydm72")
+disabled = true
+
+[node name="Laser_bot3" type="Node2D" parent="."]
+position = Vector2(0, 92)
+
+[node name="Sprite2D_Flash3" type="Sprite2D" parent="Laser_bot3"]
+position = Vector2(-163, 0)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("3_5xltd")
+hframes = 12
+frame = 11
+
+[node name="Sprite2D_Laser3" type="Sprite2D" parent="Laser_bot3"]
+scale = Vector2(5.6, 2.2)
+texture = ExtResource("3_5xltd")
+hframes = 12
+frame = 11
+
+[node name="Area2d_bossmage_laser3" type="Area2D" parent="Laser_bot3/Sprite2D_Laser3" groups=["mageboss_laser"]]
+script = ExtResource("2_ulobe")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Laser_bot3/Sprite2D_Laser3/Area2d_bossmage_laser3"]
+position = Vector2(0, 1)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_ydm72")
+disabled = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_ms3ds")
+}
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource("AnimationNodeStateMachine_owyot")
+anim_player = NodePath("../AnimationPlayer")
+active = true
+parameters/conditions/123 = false
+parameters/conditions/321 = false
+parameters/conditions/Double1 = false
+parameters/conditions/Double2 = false
+parameters/conditions/Double3 = false
+parameters/conditions/anim_stopped = false
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_vbr1k")
+
+[connection signal="body_entered" from="Laser_bot1/Sprite2D_Laser1/Area2d_bossmage_laser1" to="Laser_bot1/Sprite2D_Laser1/Area2d_bossmage_laser1" method="_on_body_entered"]
+[connection signal="body_entered" from="Laser_bot2/Sprite2D_Laser2/Area2d_bossmage_laser2" to="Laser_bot2/Sprite2D_Laser2/Area2d_bossmage_laser2" method="_on_body_entered"]
+[connection signal="body_entered" from="Laser_bot3/Sprite2D_Laser3/Area2d_bossmage_laser3" to="Laser_bot3/Sprite2D_Laser3/Area2d_bossmage_laser3" method="_on_body_entered"]

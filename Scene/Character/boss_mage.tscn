@@ -1,0 +1,236 @@
+[gd_scene load_steps=24 format=3 uid="uid://dm82ow51kpyqy"]
+
+[ext_resource type="Texture2D" uid="uid://b8gon53kalhs7" path="res://Art/Penusbmic/Sci-fi Character Pack 11/Sorcerer Bot/all.png" id="1_0t0m4"]
+[ext_resource type="Script" path="res://Script/Character/boss_mage.gd" id="1_ehcmg"]
+[ext_resource type="Texture2D" uid="uid://xuc0oee0x5km" path="res://Art/test2.png" id="3_ooxon"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hlgm1"]
+radius = 11.0
+height = 32.0
+
+[sub_resource type="Gradient" id="Gradient_p7ob2"]
+colors = PackedColorArray(0.85098, 0.85098, 0.85098, 0.0980392, 0.470588, 0.470588, 0.470588, 0.0784314)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_epo7p"]
+gradient = SubResource("Gradient_p7ob2")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_71vxl"]
+emission_shape = 6
+emission_ring_axis = Vector3(0, 0, 1)
+emission_ring_height = 18.0
+emission_ring_radius = 18.0
+emission_ring_inner_radius = 18.0
+particle_flag_disable_z = true
+direction = Vector3(0, -1, 0)
+gravity = Vector3(0, 0, 0)
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+radial_accel_min = -50.0
+scale_min = 0.01
+scale_max = 0.01
+color_ramp = SubResource("GradientTexture1D_epo7p")
+
+[sub_resource type="Animation" id="Animation_nn1ws"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_rwguj"]
+resource_name = "SETUP"
+
+[sub_resource type="Animation" id="Animation_p88k8"]
+resource_name = "cast"
+length = 0.7
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [24, 25, 26, 27, 28, 29, 30]
+}
+
+[sub_resource type="Animation" id="Animation_dplo2"]
+resource_name = "damage"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [32, 33]
+}
+
+[sub_resource type="Animation" id="Animation_ltv7i"]
+resource_name = "dead"
+length = 0.65
+step = 0.15
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.15, 0.3, 0.45, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [40, 41, 42, 44, 45]
+}
+
+[sub_resource type="Animation" id="Animation_lirby"]
+resource_name = "new_animation"
+length = 0.75
+loop_mode = 1
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.15, 0.3, 0.45, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.7),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"increase_idle_count"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_f46ud"]
+resource_name = "swing"
+length = 0.7
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [16, 17, 18, 19, 20, 21, 22]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimationTree:parameters/conditions/swing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.7),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tuy28"]
+_data = {
+"RESET": SubResource("Animation_nn1ws"),
+"SETUP": SubResource("Animation_rwguj"),
+"cast": SubResource("Animation_p88k8"),
+"damage": SubResource("Animation_dplo2"),
+"dead": SubResource("Animation_ltv7i"),
+"idle": SubResource("Animation_lirby"),
+"swing": SubResource("Animation_f46ud")
+}
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ncaxd"]
+animation = &"idle"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_crnqh"]
+animation = &"swing"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_hdg2c"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_aip1x"]
+advance_mode = 2
+advance_condition = &"swing"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_20j4j"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_jwlnn"]
+advance_mode = 2
+advance_condition = &"dead"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_okawb"]
+advance_mode = 2
+advance_condition = &"dead"
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_nmr03"]
+states/Start/position = Vector2(215, 129)
+states/idle/node = SubResource("AnimationNodeAnimation_ncaxd")
+states/idle/position = Vector2(400, 171)
+states/swing/node = SubResource("AnimationNodeAnimation_crnqh")
+states/swing/position = Vector2(499, 303)
+transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_hdg2c"), "idle", "swing", SubResource("AnimationNodeStateMachineTransition_aip1x"), "swing", "idle", SubResource("AnimationNodeStateMachineTransition_20j4j"), "swing", "End", SubResource("AnimationNodeStateMachineTransition_jwlnn"), "idle", "End", SubResource("AnimationNodeStateMachineTransition_okawb")]
+graph_offset = Vector2(-16, -8)
+
+[node name="Boss_Mage" type="CharacterBody2D" groups=["enemy"]]
+collision_layer = 2
+collision_mask = 6
+script = ExtResource("1_ehcmg")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_0t0m4")
+hframes = 8
+vframes = 6
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-6, 34)
+shape = SubResource("CapsuleShape2D_hlgm1")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="CollisionShape2D"]
+amount = 100
+process_material = SubResource("ParticleProcessMaterial_71vxl")
+texture = ExtResource("3_ooxon")
+lifetime = 0.5
+speed_scale = 0.4
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_tuy28")
+}
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource("AnimationNodeStateMachine_nmr03")
+anim_player = NodePath("../AnimationPlayer")
+active = true
+parameters/conditions/dead = false
+parameters/conditions/swing = false

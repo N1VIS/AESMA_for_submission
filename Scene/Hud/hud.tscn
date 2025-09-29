@@ -1,0 +1,116 @@
+[gd_scene load_steps=6 format=3 uid="uid://jtkn4ar7l2r6"]
+
+[ext_resource type="Texture2D" uid="uid://dhgmayeoejyhr" path="res://Art/16x16 spritesheet.png" id="1_3s6qy"]
+[ext_resource type="Texture2D" uid="uid://cm47klifoplx5" path="res://Art/DARK - Skill Icons/Icons Separated/Icon15.png" id="2_8fmcj"]
+[ext_resource type="PackedScene" uid="uid://1hq7bh0gar6q" path="res://Scene/Hud/boss_health_bar.tscn" id="3_2pwv1"]
+[ext_resource type="PackedScene" uid="uid://blfdd3vkhbu3w" path="res://Scene/Hud/pause_menu.tscn" id="4_suelk"]
+
+[sub_resource type="GDScript" id="GDScript_4gf4f"]
+script/source = "extends CanvasLayer
+
+@onready var health_bar : TextureProgressBar = $HealthBar2
+@onready var ammo_label : Label = $AmmoCount
+@onready var camp_label : Label = $CampCount
+@onready var pause = $PauseMenu
+var paused = false
+
+func _ready():
+	var player_max_health = $\"../Player\".max_health
+	var player_max_ammo = $\"../Player\".max_ammo
+	var player_max_camp = $\"../Player\".max_camp
+	health_bar.max_value = player_max_health
+	ammo_label.text = str(player_max_ammo)
+	camp_label.text = str(player_max_camp)
+	update_health(player_max_health)
+
+func _process(_delta):
+	if Input.is_action_just_pressed(\"pause\"):
+		pauseMenu()	
+
+	
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func update_health(new_value):
+	health_bar.value = new_value
+
+
+func _on_player_update_ammo(new_value):
+	ammo_label.text = str(new_value)
+
+
+func _on_player_update_health(player_health):
+	update_health(player_health)
+
+
+func _on_player_update_tent(new_value):
+	camp_label.text = str(new_value)
+	
+func pauseMenu():
+	if paused:
+		pause.hide()
+		Engine.time_scale = 1
+	else:
+		pause.show()
+		Engine.time_scale = 0
+
+	paused = !paused
+"
+
+[node name="HUD" type="CanvasLayer"]
+script = SubResource("GDScript_4gf4f")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_right = 320.0
+offset_bottom = 102.0
+
+[node name="HealthBar" type="ProgressBar" parent="VBoxContainer"]
+visible = false
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="CampIcon" type="Sprite2D" parent="VBoxContainer"]
+visible = false
+position = Vector2(9, 72)
+texture = ExtResource("1_3s6qy")
+hframes = 14
+vframes = 25
+frame = 84
+
+[node name="AmmoIcon" type="Sprite2D" parent="VBoxContainer"]
+visible = false
+position = Vector2(10, 44)
+scale = Vector2(0.833333, 0.791667)
+texture = ExtResource("2_8fmcj")
+
+[node name="CampCount" type="Label" parent="."]
+visible = false
+offset_left = 25.0
+offset_top = 60.0
+offset_right = 35.0
+offset_bottom = 86.0
+size_flags_horizontal = 4
+text = "5
+"
+
+[node name="AmmoCount" type="Label" parent="."]
+visible = false
+offset_left = 21.0
+offset_top = 33.0
+offset_right = 341.0
+offset_bottom = 59.0
+text = "Ammo:"
+
+[node name="HealthBar2" parent="." instance=ExtResource("3_2pwv1")]
+offset_left = 2.27
+offset_top = 3.025
+offset_right = 322.27
+offset_bottom = 20.025
+tint_under = Color(0.137255, 0.0117647, 0.0392157, 1)
+tint_over = Color(0.682353, 0.611765, 0.6, 1)
+tint_progress = Color(0.298039, 0.639216, 0.380392, 1)
+
+[node name="PauseMenu" parent="." instance=ExtResource("4_suelk")]
+visible = false

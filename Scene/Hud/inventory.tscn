@@ -1,0 +1,426 @@
+[gd_scene load_steps=9 format=3 uid="uid://bp48fli8k4fjd"]
+
+[ext_resource type="Script" path="res://Script/Hud/inventory.gd" id="1_ikonc"]
+[ext_resource type="Texture2D" uid="uid://6pexgf6gtvsn" path="res://Art/Free SciFi Inventory/Inventory Boxes/scifi_inventory01.png" id="1_r7s63"]
+[ext_resource type="PackedScene" uid="uid://s5v65ad3we7x" path="res://Scene/Hud/inventory_slot.tscn" id="4_cllv5"]
+[ext_resource type="PackedScene" uid="uid://qqqo4l6bkooc" path="res://Scene/Hud/equipment_slot.tscn" id="4_g2r44"]
+[ext_resource type="Texture2D" uid="uid://b2uv1rtj0o0ow" path="res://Art/DARK - Skill Icons/Icons Separated/Icon7.png" id="4_ta5vk"]
+[ext_resource type="Texture2D" uid="uid://jcshfu832ikv" path="res://Art/Free SciFi Inventory/split_shot_inventory_default_slot.png" id="5_1u36a"]
+[ext_resource type="Texture2D" uid="uid://6tsslt3dcjft" path="res://Art/Free SciFi Inventory/split_shot_inventory_pressed.png" id="6_ki5fi"]
+[ext_resource type="Texture2D" uid="uid://d4jijx81phcjj" path="res://Art/Free SciFi Inventory/split_shot_inventory_hover_slot.png" id="7_f7n5l"]
+
+[node name="Inventory" type="Control"]
+custom_minimum_size = Vector2(150, 90)
+layout_mode = 3
+anchors_preset = 0
+offset_left = -141.0
+offset_top = -219.0
+offset_right = 1783.0
+offset_bottom = 857.0
+scale = Vector2(1.4, 1.4)
+script = ExtResource("1_ikonc")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 18.0
+offset_top = -172.0
+offset_right = 385.0
+offset_bottom = 170.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_r7s63")
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+
+[node name="GridContainer2" type="GridContainer" parent="NinePatchRect"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -118.5
+offset_right = 157.0
+offset_bottom = 118.5
+grow_vertical = 2
+theme_override_constants/v_separation = 47
+
+[node name="EquipmentSlot" parent="NinePatchRect/GridContainer2" instance=ExtResource("4_g2r44")]
+layout_mode = 2
+
+[node name="Sprite2D2" type="Sprite2D" parent="NinePatchRect/GridContainer2/EquipmentSlot"]
+visible = false
+position = Vector2(21.8572, 22.2501)
+scale = Vector2(1.33333, 1.42559)
+texture = ExtResource("4_ta5vk")
+
+[node name="EquipmentSlot2" parent="NinePatchRect/GridContainer2" instance=ExtResource("4_g2r44")]
+layout_mode = 2
+
+[node name="EquipmentSlot3" parent="NinePatchRect/GridContainer2" instance=ExtResource("4_g2r44")]
+layout_mode = 2
+
+[node name="TabContainer" type="TabContainer" parent="NinePatchRect"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -262.0
+offset_top = -130.5
+offset_bottom = 130.5
+grow_horizontal = 0
+grow_vertical = 2
+tab_alignment = 1
+clip_tabs = false
+
+[node name="Weapons" type="GridContainer" parent="NinePatchRect/TabContainer"]
+layout_mode = 2
+theme_override_constants/h_separation = 4
+columns = 8
+
+[node name="InventorySlot" parent="NinePatchRect/TabContainer/Weapons" instance=ExtResource("4_cllv5")]
+layout_mode = 2
+
+[node name="SplitShotButton" type="TextureButton" parent="NinePatchRect/TabContainer/Weapons/InventorySlot"]
+visible = false
+layout_mode = 0
+offset_left = -0.142883
+offset_top = -0.142822
+offset_right = 27.8571
+offset_bottom = 27.8572
+texture_normal = ExtResource("5_1u36a")
+texture_pressed = ExtResource("6_ki5fi")
+texture_hover = ExtResource("7_f7n5l")
+stretch_mode = 0
+
+[node name="InventorySlot2" parent="NinePatchRect/TabContainer/Weapons" instance=ExtResource("4_cllv5")]
+layout_mode = 2
+
+[node name="InventorySlot3" parent="NinePatchRect/TabContainer/Weapons" instance=ExtResource("4_cllv5")]
+layout_mode = 2
+
+[node name="InventorySlot4" parent="NinePatchRect/TabContainer/Weapons" instance=ExtResource("4_cllv5")]
+layout_mode = 2
+
+[node name="InventorySlot5" parent="NinePatchRect/TabContainer/Weapons" instance=ExtResource("4_cllv5")]
+layout_mode = 2
+
+[node name="InventorySlot6" parent="NinePatchRect/TabContainer/Weapons" instance=ExtResource("4_cllv5")]
+layout_mode = 2
+
+[node name="InventorySlot7" parent="NinePatchRect/TabContainer/Weapons" instance=ExtResource("4_cllv5")]
+layout_mode = 2
+
+[node name="InventorySlot8" parent="NinePatchRect/TabContainer/Weapons" instance=ExtResource("4_cllv5")]
+layout_mode = 2
+
+[node name="InventorySlot9" parent="NinePatchRect/TabContainer/Weapons" instance=ExtResource("4_cllv5")]
+layout_mode = 2
+
+[node name="InventorySlot10" parent="NinePatchRect/TabContainer/Weapons" instance=ExtResource("4_cllv5")]
+layout_mode = 2
+
+[node name="InventorySlot11" parent="NinePatchRect/TabContainer/Weapons" instance=ExtResource("4_cllv5")]
+layout_mode = 2
+
+[node name="InventorySlot12" parent="NinePatchRect/TabContainer/Weapons" instance=ExtResource("4_cllv5")]
+layout_mode = 2
+
+[node name="InventorySlot13" parent="NinePatchRect/TabContainer/Weapons" instance=ExtResource("4_cllv5")]
+layout_mode = 2
+
+[node name="InventorySlot14" parent="NinePatchRect/TabContainer/Weapons" instance=ExtResource("4_cllv5")]
+layout_mode = 2
+
+[node name="InventorySlot15" parent="NinePatchRect/TabContainer/Weapons" instance=ExtResource("4_cllv5")]
+layout_mode = 2
+
+[node name="InventorySlot16" parent="NinePatchRect/TabContainer/Weapons" instance=ExtResource("4_cllv5")]
+layout_mode = 2
+
+[node name="InventorySlot17" parent="NinePatchRect/TabContainer/Weapons" instance=ExtResource("4_cllv5")]
+layout_mode = 2
+
+[node name="InventorySlot18" parent="NinePatchRect/TabContainer/Weapons" instance=ExtResource("4_cllv5")]
+layout_mode = 2
+
+[node name="InventorySlot19" parent="NinePatchRect/TabContainer/Weapons" instance=ExtResource("4_cllv5")]
+layout_mode = 2
+
+[node name="InventorySlot20" parent="NinePatchRect/TabContainer/Weapons" instance=ExtResource("4_cllv5")]
+layout_mode = 2
+
+[node name="InventorySlot21" parent="NinePatchRect/TabContainer/Weapons" instance=ExtResource("4_cllv5")]
+layout_mode = 2
+
+[node name="InventorySlot22" parent="NinePatchRect/TabContainer/Weapons" instance=ExtResource("4_cllv5")]
+layout_mode = 2
+
+[node name="InventorySlot23" parent="NinePatchRect/TabContainer/Weapons" instance=ExtResource("4_cllv5")]
+layout_mode = 2
+
+[node name="InventorySlot24" parent="NinePatchRect/TabContainer/Weapons" instance=ExtResource("4_cllv5")]
+layout_mode = 2
+
+[node name="InventorySlot25" parent="NinePatchRect/TabContainer/Weapons" instance=ExtResource("4_cllv5")]
+layout_mode = 2
+
+[node name="InventorySlot26" parent="NinePatchRect/TabContainer/Weapons" instance=ExtResource("4_cllv5")]
+layout_mode = 2
+
+[node name="InventorySlot27" parent="NinePatchRect/TabContainer/Weapons" instance=ExtResource("4_cllv5")]
+layout_mode = 2
+
+[node name="InventorySlot28" parent="NinePatchRect/TabContainer/Weapons" instance=ExtResource("4_cllv5")]
+layout_mode = 2
+
+[node name="InventorySlot29" parent="NinePatchRect/TabContainer/Weapons" instance=ExtResource("4_cllv5")]
+layout_mode = 2
+
+[node name="InventorySlot30" parent="NinePatchRect/TabContainer/Weapons" instance=ExtResource("4_cllv5")]
+layout_mode = 2
+
+[node name="InventorySlot31" parent="NinePatchRect/TabContainer/Weapons" instance=ExtResource("4_cllv5")]
+layout_mode = 2
+
+[node name="InventorySlot32" parent="NinePatchRect/TabContainer/Weapons" instance=ExtResource("4_cllv5")]
+layout_mode = 2
+
+[node name="Armor" type="GridContainer" parent="NinePatchRect/TabContainer"]
+visible = false
+layout_mode = 2
+theme_override_constants/h_separation = 4
+columns = 8
+
+[node name="InventorySlot" parent="NinePatchRect/TabContainer/Armor" instance=ExtResource("4_cllv5")]
+layout_mode = 2
+
+[node name="SplitShotButton" type="TextureButton" parent="NinePatchRect/TabContainer/Armor/InventorySlot"]
+visible = false
+layout_mode = 0
+offset_left = -0.142883
+offset_top = -0.142822
+offset_right = 27.8571
+offset_bottom = 27.8572
+texture_normal = ExtResource("5_1u36a")
+texture_pressed = ExtResource("6_ki5fi")
+texture_hover = ExtResource("7_f7n5l")
+stretch_mode = 0
+
+[node name="InventorySlot2" parent="NinePatchRect/TabContainer/Armor" instance=ExtResource("4_cllv5")]
+layout_mode = 2
+
+[node name="InventorySlot3" parent="NinePatchRect/TabContainer/Armor" instance=ExtResource("4_cllv5")]
+layout_mode = 2
+
+[node name="InventorySlot4" parent="NinePatchRect/TabContainer/Armor" instance=ExtResource("4_cllv5")]
+layout_mode = 2
+
+[node name="InventorySlot5" parent="NinePatchRect/TabContainer/Armor" instance=ExtResource("4_cllv5")]
+layout_mode = 2
+
+[node name="InventorySlot6" parent="NinePatchRect/TabContainer/Armor" instance=ExtResource("4_cllv5")]
+layout_mode = 2
+
+[node name="InventorySlot7" parent="NinePatchRect/TabContainer/Armor" instance=ExtResource("4_cllv5")]
+layout_mode = 2
+
+[node name="InventorySlot8" parent="NinePatchRect/TabContainer/Armor" instance=ExtResource("4_cllv5")]
+layout_mode = 2
+
+[node name="InventorySlot9" parent="NinePatchRect/TabContainer/Armor" instance=ExtResource("4_cllv5")]
+layout_mode = 2
+
+[node name="InventorySlot10" parent="NinePatchRect/TabContainer/Armor" instance=ExtResource("4_cllv5")]
+layout_mode = 2
+
+[node name="InventorySlot11" parent="NinePatchRect/TabContainer/Armor" instance=ExtResource("4_cllv5")]
+layout_mode = 2
+
+[node name="InventorySlot12" parent="NinePatchRect/TabContainer/Armor" instance=ExtResource("4_cllv5")]
+layout_mode = 2
+
+[node name="InventorySlot13" parent="NinePatchRect/TabContainer/Armor" instance=ExtResource("4_cllv5")]
+layout_mode = 2
+
+[node name="InventorySlot14" parent="NinePatchRect/TabContainer/Armor" instance=ExtResource("4_cllv5")]
+layout_mode = 2
+
+[node name="InventorySlot15" parent="NinePatchRect/TabContainer/Armor" instance=ExtResource("4_cllv5")]
+layout_mode = 2
+
+[node name="InventorySlot16" parent="NinePatchRect/TabContainer/Armor" instance=ExtResource("4_cllv5")]
+layout_mode = 2
+
+[node name="InventorySlot17" parent="NinePatchRect/TabContainer/Armor" instance=ExtResource("4_cllv5")]
+layout_mode = 2
+
+[node name="InventorySlot18" parent="NinePatchRect/TabContainer/Armor" instance=ExtResource("4_cllv5")]
+layout_mode = 2
+
+[node name="InventorySlot19" parent="NinePatchRect/TabContainer/Armor" instance=ExtResource("4_cllv5")]
+layout_mode = 2
+
+[node name="InventorySlot20" parent="NinePatchRect/TabContainer/Armor" instance=ExtResource("4_cllv5")]
+layout_mode = 2
+
+[node name="InventorySlot21" parent="NinePatchRect/TabContainer/Armor" instance=ExtResource("4_cllv5")]
+layout_mode = 2
+
+[node name="InventorySlot22" parent="NinePatchRect/TabContainer/Armor" instance=ExtResource("4_cllv5")]
+layout_mode = 2
+
+[node name="InventorySlot23" parent="NinePatchRect/TabContainer/Armor" instance=ExtResource("4_cllv5")]
+layout_mode = 2
+
+[node name="InventorySlot24" parent="NinePatchRect/TabContainer/Armor" instance=ExtResource("4_cllv5")]
+layout_mode = 2
+
+[node name="InventorySlot25" parent="NinePatchRect/TabContainer/Armor" instance=ExtResource("4_cllv5")]
+layout_mode = 2
+
+[node name="InventorySlot26" parent="NinePatchRect/TabContainer/Armor" instance=ExtResource("4_cllv5")]
+layout_mode = 2
+
+[node name="InventorySlot27" parent="NinePatchRect/TabContainer/Armor" instance=ExtResource("4_cllv5")]
+layout_mode = 2
+
+[node name="InventorySlot28" parent="NinePatchRect/TabContainer/Armor" instance=ExtResource("4_cllv5")]
+layout_mode = 2
+
+[node name="InventorySlot29" parent="NinePatchRect/TabContainer/Armor" instance=ExtResource("4_cllv5")]
+layout_mode = 2
+
+[node name="InventorySlot30" parent="NinePatchRect/TabContainer/Armor" instance=ExtResource("4_cllv5")]
+layout_mode = 2
+
+[node name="InventorySlot31" parent="NinePatchRect/TabContainer/Armor" instance=ExtResource("4_cllv5")]
+layout_mode = 2
+
+[node name="InventorySlot32" parent="NinePatchRect/TabContainer/Armor" instance=ExtResource("4_cllv5")]
+layout_mode = 2
+
+[node name="Resources" type="GridContainer" parent="NinePatchRect/TabContainer"]
+visible = false
+layout_mode = 2
+theme_override_constants/h_separation = 4
+columns = 8
+
+[node name="InventorySlot" parent="NinePatchRect/TabContainer/Resources" instance=ExtResource("4_cllv5")]
+layout_mode = 2
+
+[node name="SplitShotButton" type="TextureButton" parent="NinePatchRect/TabContainer/Resources/InventorySlot"]
+visible = false
+layout_mode = 0
+offset_left = -0.142883
+offset_top = -0.142822
+offset_right = 27.8571
+offset_bottom = 27.8572
+texture_normal = ExtResource("5_1u36a")
+texture_pressed = ExtResource("6_ki5fi")
+texture_hover = ExtResource("7_f7n5l")
+stretch_mode = 0
+
+[node name="InventorySlot2" parent="NinePatchRect/TabContainer/Resources" instance=ExtResource("4_cllv5")]
+layout_mode = 2
+
+[node name="InventorySlot3" parent="NinePatchRect/TabContainer/Resources" instance=ExtResource("4_cllv5")]
+layout_mode = 2
+
+[node name="InventorySlot4" parent="NinePatchRect/TabContainer/Resources" instance=ExtResource("4_cllv5")]
+layout_mode = 2
+
+[node name="InventorySlot5" parent="NinePatchRect/TabContainer/Resources" instance=ExtResource("4_cllv5")]
+layout_mode = 2
+
+[node name="InventorySlot6" parent="NinePatchRect/TabContainer/Resources" instance=ExtResource("4_cllv5")]
+layout_mode = 2
+
+[node name="InventorySlot7" parent="NinePatchRect/TabContainer/Resources" instance=ExtResource("4_cllv5")]
+layout_mode = 2
+
+[node name="InventorySlot8" parent="NinePatchRect/TabContainer/Resources" instance=ExtResource("4_cllv5")]
+layout_mode = 2
+
+[node name="InventorySlot9" parent="NinePatchRect/TabContainer/Resources" instance=ExtResource("4_cllv5")]
+layout_mode = 2
+
+[node name="InventorySlot10" parent="NinePatchRect/TabContainer/Resources" instance=ExtResource("4_cllv5")]
+layout_mode = 2
+
+[node name="InventorySlot11" parent="NinePatchRect/TabContainer/Resources" instance=ExtResource("4_cllv5")]
+layout_mode = 2
+
+[node name="InventorySlot12" parent="NinePatchRect/TabContainer/Resources" instance=ExtResource("4_cllv5")]
+layout_mode = 2
+
+[node name="InventorySlot13" parent="NinePatchRect/TabContainer/Resources" instance=ExtResource("4_cllv5")]
+layout_mode = 2
+
+[node name="InventorySlot14" parent="NinePatchRect/TabContainer/Resources" instance=ExtResource("4_cllv5")]
+layout_mode = 2
+
+[node name="InventorySlot15" parent="NinePatchRect/TabContainer/Resources" instance=ExtResource("4_cllv5")]
+layout_mode = 2
+
+[node name="InventorySlot16" parent="NinePatchRect/TabContainer/Resources" instance=ExtResource("4_cllv5")]
+layout_mode = 2
+
+[node name="InventorySlot17" parent="NinePatchRect/TabContainer/Resources" instance=ExtResource("4_cllv5")]
+layout_mode = 2
+
+[node name="InventorySlot18" parent="NinePatchRect/TabContainer/Resources" instance=ExtResource("4_cllv5")]
+layout_mode = 2
+
+[node name="InventorySlot19" parent="NinePatchRect/TabContainer/Resources" instance=ExtResource("4_cllv5")]
+layout_mode = 2
+
+[node name="InventorySlot20" parent="NinePatchRect/TabContainer/Resources" instance=ExtResource("4_cllv5")]
+layout_mode = 2
+
+[node name="InventorySlot21" parent="NinePatchRect/TabContainer/Resources" instance=ExtResource("4_cllv5")]
+layout_mode = 2
+
+[node name="InventorySlot22" parent="NinePatchRect/TabContainer/Resources" instance=ExtResource("4_cllv5")]
+layout_mode = 2
+
+[node name="InventorySlot23" parent="NinePatchRect/TabContainer/Resources" instance=ExtResource("4_cllv5")]
+layout_mode = 2
+
+[node name="InventorySlot24" parent="NinePatchRect/TabContainer/Resources" instance=ExtResource("4_cllv5")]
+layout_mode = 2
+
+[node name="InventorySlot25" parent="NinePatchRect/TabContainer/Resources" instance=ExtResource("4_cllv5")]
+layout_mode = 2
+
+[node name="InventorySlot26" parent="NinePatchRect/TabContainer/Resources" instance=ExtResource("4_cllv5")]
+layout_mode = 2
+
+[node name="InventorySlot27" parent="NinePatchRect/TabContainer/Resources" instance=ExtResource("4_cllv5")]
+layout_mode = 2
+
+[node name="InventorySlot28" parent="NinePatchRect/TabContainer/Resources" instance=ExtResource("4_cllv5")]
+layout_mode = 2
+
+[node name="InventorySlot29" parent="NinePatchRect/TabContainer/Resources" instance=ExtResource("4_cllv5")]
+layout_mode = 2
+
+[node name="InventorySlot30" parent="NinePatchRect/TabContainer/Resources" instance=ExtResource("4_cllv5")]
+layout_mode = 2
+
+[node name="InventorySlot31" parent="NinePatchRect/TabContainer/Resources" instance=ExtResource("4_cllv5")]
+layout_mode = 2
+
+[node name="InventorySlot32" parent="NinePatchRect/TabContainer/Resources" instance=ExtResource("4_cllv5")]
+layout_mode = 2
+
+[connection signal="pressed" from="NinePatchRect/TabContainer/Weapons/InventorySlot/SplitShotButton" to="." method="_on_split_shot_button_pressed"]
+[connection signal="pressed" from="NinePatchRect/TabContainer/Armor/InventorySlot/SplitShotButton" to="." method="_on_split_shot_button_pressed"]
+[connection signal="pressed" from="NinePatchRect/TabContainer/Resources/InventorySlot/SplitShotButton" to="." method="_on_split_shot_button_pressed"]

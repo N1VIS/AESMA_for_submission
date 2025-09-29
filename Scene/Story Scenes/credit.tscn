@@ -1,0 +1,74 @@
+[gd_scene load_steps=6 format=3 uid="uid://b2jbio177m0w0"]
+
+[ext_resource type="Script" path="res://Script/Level/credit.gd" id="1_bsw88"]
+[ext_resource type="FontFile" uid="uid://co8i51lmv3bjo" path="res://Font/RETROTECH.ttf" id="1_l7104"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_gie7m"]
+font = ExtResource("1_l7104")
+font_size = 130
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_fmh5j"]
+resource_name = "fade_in"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label2:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0, 1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect2:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.9),
+"transitions": PackedFloat32Array(2.63902, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bjk1i"]
+_data = {
+"fade_in": SubResource("Animation_fmh5j")
+}
+
+[node name="Credit" type="Node2D"]
+script = ExtResource("1_bsw88")
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+offset_right = 1922.0
+offset_bottom = 1084.0
+color = Color(0, 0, 0, 1)
+
+[node name="Camera2D2" type="Camera2D" parent="."]
+anchor_mode = 0
+zoom = Vector2(4, 4)
+position_smoothing_speed = 10.0
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 88.0
+offset_top = 105.0
+offset_right = 953.0
+offset_bottom = 329.0
+scale = Vector2(0.365, 0.295)
+text = "THANK YOU
+FOR PLAYING!"
+label_settings = SubResource("LabelSettings_gie7m")
+horizontal_alignment = 1
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "fade_in"
+libraries = {
+"": SubResource("AnimationLibrary_bjk1i")
+}

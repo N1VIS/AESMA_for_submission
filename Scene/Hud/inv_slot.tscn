@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://1fg1kcxdhdkv"]
+
+[ext_resource type="Texture2D" uid="uid://dvlf2bll46ctp" path="res://Art/Free SciFi Inventory/Inventory Boxes/scifi_inventory01_box.png" id="1_vmy1k"]
+
+[node name="Slot" type="Panel"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(22, 22)
+offset_right = 22.0
+offset_bottom = 22.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_vmy1k")
+centered = false

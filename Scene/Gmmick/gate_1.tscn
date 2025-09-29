@@ -1,0 +1,64 @@
+[gd_scene load_steps=6 format=3 uid="uid://qf2moo1wmrss"]
+
+[ext_resource type="Texture2D" uid="uid://chs0b8mbk1itg" path="res://Art/DARK Edition/Animated objects/Portal/idle 28x41.png" id="1_54e1x"]
+
+[sub_resource type="Animation" id="Animation_xqjpn"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_qdyjt"]
+resource_name = "gate"
+length = 0.9
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6d8r1"]
+_data = {
+"RESET": SubResource("Animation_xqjpn"),
+"gate": SubResource("Animation_qdyjt")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a0obs"]
+
+[node name="Gate1" type="Node2D"]
+position = Vector2(35, 232)
+rotation = 1.5708
+scale = Vector2(1.82, 1.82)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_54e1x")
+hframes = 9
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "gate"
+libraries = {
+"": SubResource("AnimationLibrary_6d8r1")
+}
+
+[node name="Gate1Door" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gate1Door"]
+position = Vector2(-0.549324, 34.0659)
+shape = SubResource("RectangleShape2D_a0obs")

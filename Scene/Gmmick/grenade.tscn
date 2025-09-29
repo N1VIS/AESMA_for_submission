@@ -1,0 +1,111 @@
+[gd_scene load_steps=14 format=3 uid="uid://lovo5u24chne"]
+
+[ext_resource type="Script" path="res://Script/Gimmick/Grenade.gd" id="1_74nqn"]
+[ext_resource type="Texture2D" uid="uid://b2uotuneoypwu" path="res://Art/Gun/Projectiles 16x16 Sprite Sheet.png" id="2_w8mng"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mtdhc"]
+radius = 5.09902
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ph4ou"]
+atlas = ExtResource("2_w8mng")
+region = Rect2(0, 64, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k8msa"]
+atlas = ExtResource("2_w8mng")
+region = Rect2(16, 64, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qwygv"]
+atlas = ExtResource("2_w8mng")
+region = Rect2(32, 64, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jebkr"]
+atlas = ExtResource("2_w8mng")
+region = Rect2(0, 80, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tlinm"]
+atlas = ExtResource("2_w8mng")
+region = Rect2(16, 80, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7rsxp"]
+atlas = ExtResource("2_w8mng")
+region = Rect2(32, 80, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hsbec"]
+atlas = ExtResource("2_w8mng")
+region = Rect2(48, 80, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_72bxj"]
+atlas = ExtResource("2_w8mng")
+region = Rect2(64, 80, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_14x8x"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ph4ou")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k8msa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qwygv")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jebkr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tlinm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7rsxp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hsbec")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_72bxj")
+}],
+"loop": false,
+"name": &"explode",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pl12a"]
+
+[node name="Grenade" type="RigidBody2D"]
+show_behind_parent = true
+top_level = true
+collision_layer = 2
+collision_mask = 6
+gravity_scale = 0.5
+linear_damp = 0.1
+script = ExtResource("1_74nqn")
+grenade_damege = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_mtdhc")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_14x8x")
+animation = &"explode"
+
+[node name="Timer" type="Timer" parent="."]
+process_callback = 0
+one_shot = true
+
+[node name="Area2D" type="Area2D" parent="."]
+monitoring = false
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_pl12a")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

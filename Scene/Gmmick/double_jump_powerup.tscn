@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://crwibrmc8eobc"]
+
+[ext_resource type="Script" path="res://Script/Gimmick/DoubleJumpPower.gd" id="1_fnwaw"]
+[ext_resource type="Texture2D" uid="uid://du7gfgag2ryxf" path="res://Art/2D Pixel Dungeon Asset Pack/items and trap_animation/chest/chest_1.png" id="2_rfa1q"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6jtlj"]
+size = Vector2(14, 13)
+
+[node name="DoubleJumpPower" type="Area2D" groups=["items"]]
+script = ExtResource("1_fnwaw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_6jtlj")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_rfa1q")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

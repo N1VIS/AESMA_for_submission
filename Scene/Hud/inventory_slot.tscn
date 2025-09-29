@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://s5v65ad3we7x"]
+
+[ext_resource type="Texture2D" uid="uid://b0kdvx3agh0fw" path="res://Art/Free SciFi Inventory/Inventory Boxes/scifi_inventory01_box_back.png" id="1_fm03b"]
+[ext_resource type="Texture2D" uid="uid://6pexgf6gtvsn" path="res://Art/Free SciFi Inventory/Inventory Boxes/scifi_inventory01.png" id="2_qylg2"]
+[ext_resource type="Texture2D" uid="uid://dvlf2bll46ctp" path="res://Art/Free SciFi Inventory/Inventory Boxes/scifi_inventory01_box.png" id="3_ef811"]
+
+[node name="InventorySlot" type="TextureButton"]
+offset_right = 28.0
+offset_bottom = 28.0
+texture_normal = ExtResource("1_fm03b")
+texture_pressed = ExtResource("2_qylg2")
+texture_hover = ExtResource("3_ef811")
+stretch_mode = 0

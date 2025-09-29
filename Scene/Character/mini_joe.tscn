@@ -1,0 +1,179 @@
+[gd_scene load_steps=10 format=3 uid="uid://idipa3aamxrx"]
+
+[ext_resource type="Texture2D" uid="uid://bugdfudbuglda" path="res://Art/DARK Edition/Sprites/Hell Bot DARK/idle 92x36.png" id="1_jotg5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pwx8a"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oo378"]
+size = Vector2(73, 14)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q2vdc"]
+size = Vector2(20, 25)
+
+[sub_resource type="Animation" id="Animation_1p8ig"]
+resource_name = "idle"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_jotg5")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite:vframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [6]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 2, 4, 6, 8, 10]
+}
+
+[sub_resource type="Animation" id="Animation_6eafv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_jotg5")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite:vframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [6]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_c83r3"]
+resource_name = "shoot"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jqe7q"]
+_data = {
+"RESET": SubResource("Animation_6eafv"),
+"idle": SubResource("Animation_1p8ig"),
+"shoot": SubResource("Animation_c83r3")
+}
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_41op4"]
+
+[node name="MiniJoe" type="CharacterBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_pwx8a")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+light_mask = 2
+visibility_layer = 2
+position = Vector2(3, -7)
+texture = ExtResource("1_jotg5")
+hframes = 2
+vframes = 6
+
+[node name="RayCast2D" type="RayCast2D" parent="Sprite"]
+position = Vector2(1, 7)
+rotation = 1.57079
+scale = Vector2(2.13316, -5.22006)
+target_position = Vector2(0.0002834, 31.992)
+
+[node name="RayCast2D2" type="RayCast2D" parent="Sprite"]
+position = Vector2(-4, 7)
+rotation = 2.04262
+scale = Vector2(2.13316, -5.22006)
+target_position = Vector2(-1.67405, 31.2658)
+
+[node name="RayCast2D3" type="RayCast2D" parent="Sprite"]
+position = Vector2(-4, 7)
+rotation = 0.947313
+scale = Vector2(2.13316, -5.22006)
+target_position = Vector2(6.06346, 29.3655)
+
+[node name="ShootingRange" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ShootingRange"]
+position = Vector2(46.5, -1)
+shape = SubResource("RectangleShape2D_oo378")
+
+[node name="HitBox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
+position = Vector2(0, -2.5)
+shape = SubResource("RectangleShape2D_q2vdc")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_jqe7q")
+}
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource("AnimationNodeStateMachine_41op4")
+anim_player = NodePath("../AnimationPlayer")

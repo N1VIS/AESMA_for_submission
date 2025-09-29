@@ -1,0 +1,15 @@
+\- Connecting intercom with: Chiyou
+[signal arg="screen_on"]
+Chiyou: Hatchet. Glad you picked up. Your reputation as a hunter has caught my eye.
+Chiyou: I have to admit, I’m quite excited to have the opportunity to employ the service of a hunter of your reputation.
+Chiyou: The galaxy may be vast but I have never heard of a hunter who has been able to tame the power of the Saint’s Bounty for as long as you have.
+[signal arg="midnight"]
+Chiyou: Let's get to business. A Saint’s Bounty production facility that belongs to me was taken over by Midnight Joe, a well-known bandit around these parts of the galaxy.
+Chiyou: It seems he’s been using his new found powers granted by the Saint’s Bounty to expand his influence.
+Chiyou: But only a fool would willingly administer the Bounty unto themselves. No offense to you. He may have gained great power but it is costing him his sanity.
+Chiyou: While I have no problem with the likes of Midnight Joe succumbing to madness, I do have a problem with a madman having unrestricted access to such power. Especially power that belongs to me.
+Chiyou: You probably have guessed by now but your job is to take out Midnight Joe and his minions.
+[signal arg="back_to_screen"]
+Chiyou: I look forward to hearing of your success.
+\- Intercom disconnected
+[signal arg="to_hub"]

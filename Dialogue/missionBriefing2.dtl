@@ -1,0 +1,13 @@
+\- Connecting intercom with; Chiyou
+[signal arg="screen_on"]
+Chiyou: It seems like Midnight Joe is now in a state of eternal slumber. Filled with eternal nightmares, I hope.
+Chiyou: You did well for your first target. Your payment will be sent to you immediately. Now let’s discuss your next job.
+[signal arg="boss"]
+Chiyou: Your second target will be the scientist, Mirage.
+Chiyou: He is a leading scientist in the field of Bounty studies under my employment.
+Chiyou: Unfortunately, it has been brought to my attention that he has been pilfering my Saints Bounty.
+Chiyou: It's a shame to lose a talent like his but there will be no exceptions in how I deal with those who thieve from me.
+Chiyou: Head to his laboratory and dispose of him and his minions. We will speak afterwards.
+\- Intercom disconnected
+[signal arg="transition"]
+[signal arg="battleOver"]
